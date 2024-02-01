@@ -88,6 +88,7 @@ function displayPostDetails(postId) {
   const postComments = globalComments.filter(
     (c) => c.postId.toString() === postId
   );
+  window.scrollTo({ top: 0, behavior: "smooth" });
   if (postComments.length === 0) {
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
       .then((response) => response.json())
